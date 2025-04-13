@@ -2,7 +2,7 @@ import { Environment } from "../../../support/helpers/environs";
 const baseUrl = Environment.getBaseUrl();
 
 
-describe('Computer Basket', () => {
+describe('Guest Checkout - Money Order', () => {
 
     beforeEach(() => {
         cy.visit(baseUrl);
@@ -10,7 +10,7 @@ describe('Computer Basket', () => {
         cy.linkText().contains('Desktops').click({ force: true })
     });
 
-    it('TC01 - Build your own cheap computer', () => {
+    it('Build your own cheap computer', () => {
         cy.AddToCartBtn().eq(0).click({ force: true })
         cy.radioBtn().eq(0).click({ force: true })
         cy.radioBtn().eq(3).click({ force: true })
@@ -20,11 +20,12 @@ describe('Computer Basket', () => {
         cy.shoppingCart()
         cy.termsofservice()
         cy.checkOutBtn()
-        cy.checkoutAsguestwithCC()
+        cy.checkoutAsguestwithMoneyOrder()
+       
 
     });
 
-    it('TC02 - Build your own computer', () => {
+    it('Build your own computer', () => {
         cy.AddToCartBtn().eq(1).click({ force: true })
         cy.radioBtn().eq(0).click({ force: true })
         cy.radioBtn().eq(3).click({ force: true })
@@ -32,18 +33,20 @@ describe('Computer Basket', () => {
         cy.shoppingCart()
         cy.termsofservice()
         cy.checkOutBtn()
-        cy.checkoutAsguestwithCC()
+        cy.checkoutAsguestwithMoneyOrder()
+        
 
     });
 
-    it('TC03 - Build your own expensive computer', () => {
+    it('Build your own expensive computer', () => {
         cy.AddToCartBtn().eq(2).click({ force: true })
         cy.checkBox().eq(0).click({ force: true })
         cy.get('#add-to-cart-button-74').click()
         cy.shoppingCart()
         cy.termsofservice()
         cy.checkOutBtn()
-        cy.checkoutAsguestwithCC()
+        cy.checkoutAsguestwithMoneyOrder()
+        
     });
 
 });

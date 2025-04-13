@@ -15,7 +15,7 @@ describe('User Registration Form', () => {
         userRegistration.pageAction.clickRegisterLink().click()
         
     });
-    it('TC01 - Register a new user with valid credentials', () => {
+    it('Register a new user with valid credentials', () => {
         userRegistration.pageAction.selectMaleGender().click()
         userRegistration.pageAction.enterFirstName(firstname).type(firstname)
         userRegistration.pageAction.enterLastName(lastname).type(lastname)
@@ -26,7 +26,7 @@ describe('User Registration Form', () => {
         userRegistration.pageAction.verifyRegistrationComplete().should("contain.text", "Your registration completed")
     });
 
-    it('TC02 - Register with an existing email (expect error)', () => {
+    it('Register with an existing email (expect error)', () => {
         userRegistration.pageAction.clickRegisterLink().click();
         userRegistration.pageAction.selectMaleGender().click()
         userRegistration.pageAction.enterFirstName().type(firstname)
@@ -38,7 +38,7 @@ describe('User Registration Form', () => {
         cy.assertAnyValidationMessage("The specified email already exists");
     });
 
-    it('TC03 - Register with invalid email format', () => {
+    it('Register with invalid email format', () => {
         userRegistration.pageAction.clickRegisterLink().click();
         userRegistration.pageAction.selectMaleGender().click()
         userRegistration.pageAction.enterFirstName().type(firstname)
@@ -50,7 +50,7 @@ describe('User Registration Form', () => {
         cy.assertAnyValidationMessage("Wrong email");
     });
 
-    it('TC04 - Register with weak password ', () => {
+    it('Register with weak password ', () => {
         userRegistration.pageAction.clickRegisterLink().click();
         userRegistration.pageAction.selectMaleGender().click()
         userRegistration.pageAction.enterFirstName().type(firstname)
@@ -61,7 +61,7 @@ describe('User Registration Form', () => {
         cy.assertAnyValidationMessage("The password should have at least 6 characters.");
     });
 
-    it('TC05 - Password and confirm password mismatch', () => {
+    it('Password and confirm password mismatch', () => {
         userRegistration.pageAction.clickRegisterLink().click();
         userRegistration.pageAction.selectMaleGender().click()
         userRegistration.pageAction.enterFirstName().type(firstname)
@@ -72,7 +72,7 @@ describe('User Registration Form', () => {
         //cy.assertAnyValidationMessage("The password and confirmation password do not match.");
     });
 
-    it('TC06 - Register with a blank password', () => {
+    it('Register with a blank password', () => {
         userRegistration.pageAction.clickRegisterLink().click();
         userRegistration.pageAction.selectMaleGender().click()
         userRegistration.pageAction.enterFirstName().type(firstname)
@@ -82,7 +82,7 @@ describe('User Registration Form', () => {
         cy.assertAnyValidationMessage("Password is required.");
     });
 
-    it('TC07 - Register with a blank email', () => {
+    it('Register with a blank email', () => {
         userRegistration.pageAction.selectMaleGender().click().should('be.checked');
         userRegistration.pageAction.selectFemaleGender().should('not.be.checked');
         userRegistration.pageAction.enterFirstName(firstname).type(firstname)

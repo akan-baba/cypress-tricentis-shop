@@ -8,5 +8,6 @@ module.exports = defineConfig({
     experimentalRunAllSpecs: true,
     experimentalStudio: true,
     pageLoadTimeout: 100000,
+    video: true,
   },
 });

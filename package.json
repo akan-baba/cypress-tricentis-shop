@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
      "cypress:open": "npx cypress open --env ENV=qa",
-     "cypress:run": "npx cypress run --env ENV=dev && npx cypress run --env ENV=staging"
+     "cypress:run": "npx cypress run --env ENV=dev && npx cypress run --env ENV=qa"
   },
   "repository": {
     "type": "git",
