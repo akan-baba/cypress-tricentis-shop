@@ -1,33 +1,108 @@
 
 # 🧪 Cypress Tests – Tricentis Demo Web Shop
 
-This project contains an end-to-end test automation suite for the [Tricentis Demo Web Shop](https://demowebshop.tricentis.com/), implemented using **Cypress**.
+This project contains an end-to-end test automation suite for the [Tricentis Demo Web Shop](https://demowebshop.tricentis.com/), implemented using **Cypress**, following the **Page Object Model (POM)** and using fixture-driven test data.
 
-It covers key user journeys including registration, login, cart management, checkout, search, and order history — with over **40 test cases** developed using the Page Object Model pattern.
+The framework is modular, scalable, and integrated with **Allure Reporting** for clean, interactive test dashboards.
 
 ---
 
 ## 🚀 Features Tested
 
 ### 🔐 Registration & Login
-- Valid and invalid registrations
+- Valid and invalid user registrations
 - Login with valid/invalid/blank credentials
-- Forgot password flow
+- Password reset flow for multiple users (data-driven)
 - Logout and session validation
 
-### 🛒 Cart & Checkout
-- Add/remove products to/from cart
-- Checkout as guest and registered user
-- Update quantity and verify total
-- Apply invalid/valid discount codes
+### 🛒 Shopping Cart & Checkout
+- Add/remove products from the cart
+- Checkout with guest and registered accounts
+- Quantity updates and total price validation
+- Apply valid/invalid discount codes
 
-### 🔍 Product Search & Filters
-- Search by keyword
-- Filter by category
-- Sort by price and name
-- Product detail view
+### 🔍 Search & Filters
+- Keyword search and sorting
+- Filter by category or price
+- Product detail validation
 
 ### 📦 Orders
-- Submit order and verify confirmation
-- View and reorder from order history
+- Submit orders and verify confirmation
+- View past orders and reorder
 - Attempt checkout with empty cart
+
+---
+
+## 🧩 Tech Stack
+
+- **Cypress**
+- **JavaScript (ES6)**
+- **Allure Reports** (`@shelex/cypress-allure-plugin`)
+- **Modular Page Object Model**
+- **JSON Fixtures for test data**
+
+---
+
+## 📁 Project Structure
+
+```
+cypress/
+├── e2e/
+│   ├── 1-UserMgt/                # User tests (register, login)
+│   ├── 2-ShoppingCart/          # Jewelry, Apparel, Computers, Laptops
+│   ├── 3-Misc/                  # Reusables (e.g. password reset)
+├── fixtures/                    # Test data
+├── support/
+│   ├── helpers/                 # Common reusable logic
+│   └── pageObjects/             # Page object classes
+```
+
+---
+
+## 🧪 Run Tests
+
+### Install dependencies
+```bash
+npm install
+```
+
+### Run Cypress tests (headless)
+```bash
+npm run cypress:run
+```
+
+### Open Cypress interactive runner
+```bash
+npm run cypress:open
+```
+
+---
+
+## 📊 Allure Reporting
+
+### Generate and open report
+```bash
+npm run allure:generate
+npm run allure:open
+```
+
+> Make sure Allure CLI is installed:
+```bash
+npm install -g allure-commandline --save-dev
+```
+
+---
+
+## 👨‍💻 Author
+
+**Your Name**  
+QA Test Analyst | Automation Engineer  
+🔗 [LinkedIn](www.linkedin.com/in/akan-antia) • [GitHub](https://github.com/akan-baba/cypress-tricentis-shop.git)
+
+---
+
+## 📌 Notes
+
+- Password reset tests are data-driven using `userChangePwd.json`
+- All tests are re-runnable and use consistent state
+- Easily extendable to include accessibility, API, and performance testing
