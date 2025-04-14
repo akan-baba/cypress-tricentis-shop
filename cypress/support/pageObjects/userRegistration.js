@@ -11,7 +11,14 @@ export class UserRegistration {
         password: "#Password",
         confirmPassword: "#ConfirmPassword",
         registerButton: "#register-button",
-        messageRegComplete: ".result"
+        messageRegComplete: ".result",
+        clickMyAccount:".my-account > ul > :nth-child(1) > .account",
+        clickChangePassword:":nth-child(7) > .inactive",
+        oldPassword:"#OldPassword",
+        newPassword:"#NewPassword",
+        confirmNewPassword:"#ConfirmNewPassword",
+        changePasswordButton:".buttons > .button-1",
+        messageChangePassword:".result",
     }
 
     pageAction = {
@@ -24,7 +31,14 @@ export class UserRegistration {
     enterPassword: () => cy.get(this.webSelectors.password),
     enterConfirmPassword: () => cy.get(this.webSelectors.confirmPassword),
     clickRegisterButton: () => cy.get(this.webSelectors.registerButton),
-    verifyRegistrationComplete: () => cy.get(this.webSelectors.messageRegComplete)
+    verifyRegistrationComplete: () => cy.get(this.webSelectors.messageRegComplete),
+    clickMyAccount: () => cy.get(this.webSelectors.clickMyAccount),
+    clickChangePassword: () => cy.get(this.webSelectors.clickChangePassword),
+    enterOldPassword: () => cy.get(this.webSelectors.oldPassword),
+    enterNewPassword: () => cy.get(this.webSelectors.newPassword),
+    enterConfirmNewPassword: () => cy.get(this.webSelectors.confirmNewPassword),
+    clickChangePasswordButton: () => cy.get(this.webSelectors.changePasswordButton),
+    verifyChangePasswordMessage: () => cy.get(this.webSelectors.messageChangePassword),
 
     }
 

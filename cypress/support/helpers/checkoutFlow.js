@@ -37,6 +37,14 @@ Cypress.Commands.add("checkoutAsguestwithCC", () => {
    cy.get("input[value='Log in']").click()
  });
 
+ Cypress.Commands.add('pwdReset', (email, password) => {
+  cy.get('.ico-login').click();
+  cy.get('#Email').clear().type(email);
+  cy.get('#Password').clear().type(password);
+  cy.get("input[value='Log in']").click();
+  cy.get("div[class='header-links'] a[class='account']", { timeout: 5000 }).should('be.visible');
+});
+
 
  Cypress.Commands.add('registerUserCreditCard', () => {
    cy.get('#billing-buttons-container > .button-1').click()
