@@ -1,6 +1,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
-import '@shelex/cypress-allure-plugin';
+import 'cypress-axe'
+
 
 
 // Hide fetch/XHR requests
@@ -13,3 +14,7 @@ if (!app.document.head.querySelector('[data-hide-command-log-request]')) {
 
   app.document.head.appendChild(style);
 }
+
+
+// Ensure Allure hooks into test lifecycle
+

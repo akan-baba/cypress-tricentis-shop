@@ -96,3 +96,21 @@ Cypress.Commands.add("checkoutAsguestwithCC", () => {
    cy.get("div[class='title'] strong").should('have.text', 'Your order has been successfully processed!')
    cy.get("input[value='Continue']").click()
   });
+
+  Cypress.Commands.add('giftCardCheckout', () => {
+    cy.get("input[value='Checkout as Guest']").click()
+    cy.get("#BillingNewAddress_FirstName").type(firstname)
+    cy.get("#BillingNewAddress_LastName").type(lastname)
+    cy.get("#BillingNewAddress_Email").type(email)
+    cy.get("#BillingNewAddress_CountryId").select('80')
+    cy.get("#BillingNewAddress_City").type('Manchy')
+    cy.get("#BillingNewAddress_Address1").type('2 Grange Avenue')
+    cy.get("#BillingNewAddress_ZipPostalCode").type('M1 7RJ')
+    cy.get("#BillingNewAddress_PhoneNumber").type('0162251085')
+    cy.get("input[onclick='Billing.save()']").click()
+    cy.get('#payment-method-buttons-container > .button-1').click()
+    cy.get('#payment-info-buttons-container > .button-1').click()
+    cy.get('#confirm-order-buttons-container > .button-1').click()
+    cy.get('strong').should('have.text', 'Your order has been successfully processed!')
+    cy.get('.button-2').click()
+  });

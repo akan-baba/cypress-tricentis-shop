@@ -87,7 +87,7 @@ describe('User Registration Form', () => {
         userRegistration.pageAction.selectFemaleGender().should('not.be.checked');
         userRegistration.pageAction.enterFirstName().type(firstname)
         userRegistration.pageAction.enterLastName().type(lastname)
-        userRegistration.pageAction.enterEmail().type().clear()
+        //userRegistration.pageAction.enterEmail().type().clear()
         userRegistration.pageAction.enterPassword('Password123').type('Password123')
         userRegistration.pageAction.enterConfirmPassword('Password123').type('Password123')
         userRegistration.pageAction.clickRegisterButton().click()
