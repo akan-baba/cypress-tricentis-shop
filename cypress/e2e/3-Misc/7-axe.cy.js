@@ -6,7 +6,7 @@ describe('Accessibility check', () => {
     it('should have no detectable a11y violations on load', () => {
       cy.visit(baseUrl);
       cy.injectAxe();
-      //cy.checkA11y(); // Will log issues if any exist
+      cy.checkA11y(); // Will log issues if any exist
     });
   });
   
