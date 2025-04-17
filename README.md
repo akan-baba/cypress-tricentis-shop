@@ -3,7 +3,7 @@
 
 This project contains an end-to-end test automation suite for the [Tricentis Demo Web Shop](https://demowebshop.tricentis.com/), implemented using **Cypress**, following the **Page Object Model (POM)** and using fixture-driven test data.
 
-The framework is modular, scalable, and integrated with **Allure Reporting** for clean, interactive test dashboards.
+
 
 ---
 
@@ -48,15 +48,25 @@ The framework is modular, scalable, and integrated with **Allure Reporting** for
 ```
 cypress/
 ├── e2e/
-│   ├── 1-UserMgt/                # User tests (register, login)
-│   ├── 2-ShoppingCart/          # Jewelry, Apparel, Computers, Laptops
-│   ├── 3-Misc/                  # Reusables (e.g. password reset)
-├── fixtures/                    # Test data
+│   ├── 1-Registration/
+│   ├── 2-ShoppingCart/
+│   ├── 3-Computers/
+│   ├── 4-Sitemap/
+│   └── 5-ContactForm/
 ├── support/
-│   ├── helpers/                 # Common reusable logic
-│   └── pageObjects/             # Page object classes
+│   ├── commands.js
+│   └── e2e.js
+└── reports/
+    └── mochawesome/
 ```
+## 🚀 Getting Started
 
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/akan-baba/cypress-tricentis-shop.git
+cd cypress-tricentis-shop
+npm install
 ---
 
 ## 🧪 Run Tests
@@ -76,26 +86,10 @@ npm run cypress:run
 npm run cypress:open
 ```
 
----
-
-## 📊 Allure Reporting
-
-### Generate and open report
-```bash
-npm run allure:generate
-npm run allure:open
-```
-
-> Make sure Allure CLI is installed:
-```bash
-npm install -g allure-commandline --save-dev
-```
-
----
 
 ## 👨‍💻 Author
 
-**Your Name**  
+**Akan Antia**  
 QA Test Analyst | Automation Engineer  
 🔗 [LinkedIn](www.linkedin.com/in/akan-antia) • [GitHub](https://github.com/akan-baba/cypress-tricentis-shop.git)
 
