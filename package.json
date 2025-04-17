@@ -16,10 +16,6 @@
   },
   "author": "Akan Antia",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/akan-baba/cypress-tricentis-shop/issues"
-  },
-  "homepage": "https://github.com/akan-baba/cypress-tricentis-shop#readme",
   "devDependencies": {
     "@faker-js/faker": "^9.6.0",
     "axe-core": "^4.10.3",
