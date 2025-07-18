@@ -4,7 +4,7 @@
   "description": "Demowebshop tricentis",
   "main": "index.js",
   "scripts": {
- "cypress:open": "npx cypress open --env ENV=qa,allure=true",
+ "cypress:open": "npx cypress open --env ENV=qa",
   "cypress:run": "npx cypress run --env ENV=qa,allure=true",
   "allure:generate": "allure generate allure-results --clean -o allure-report",
   "allure:open": "allure open allure-report",
