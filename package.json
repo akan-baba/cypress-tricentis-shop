@@ -4,11 +4,14 @@
   "description": "Demowebshop tricentis",
   "main": "index.js",
   "scripts": {
-    "cypress:open": "npx cypress open --env ENV=qa",
-    "cypress:run": "npx cypress run --env ENV=qa",
-    "report:merge": "mochawesome-merge cypress/reports/mochawesome/*.json -o cypress/reports/mochawesome/report.json",
-    "report:generate": "marge cypress/reports/mochawesome/report.json -f report -o cypress/reports/mochawesome",
-    "test:report": "npm run cypress:run && npm run report:merge && npm run report:generate"
+ "cypress:open": "npx cypress open --env ENV=qa,allure=true",
+  "cypress:run": "npx cypress run --env ENV=qa,allure=true",
+  "allure:generate": "allure generate allure-results --clean -o allure-report",
+  "allure:open": "allure open allure-report",
+  "allure:report": "npm run cypress:run && npm run allure:generate"
+
+    
+
   },
   "repository": {
     "type": "git",
@@ -18,11 +21,10 @@
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^9.6.0",
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-commandline": "^2.34.1",
     "axe-core": "^4.10.3",
     "cypress": "^14.3.0",
-    "cypress-axe": "^1.6.0",
-    "mochawesome": "^7.1.3",
-    "mochawesome-merge": "^5.0.0",
-    "mochawesome-report-generator": "^6.2.0"
+    "cypress-axe": "^1.6.0"
   }
 }

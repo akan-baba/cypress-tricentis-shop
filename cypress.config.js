@@ -1,16 +1,14 @@
-const { defineConfig } = require('cypress');
+import { defineConfig } from 'cypress';
+import allureWriter from '@shelex/cypress-allure-plugin/writer.js';
 
-module.exports = defineConfig({
-  reporter: 'mochawesome',
-  reporterOptions: {
-    reportDir: 'cypress/reports/mochawesome',
-    overwrite: false,
-    html: false,
-    json: true
-  },
+export default defineConfig({
+
   e2e: {
     setupNodeEvents(on, config) {
-   
+      allureWriter(on, config, {
+        resultsDir: "allure-results",
+      });
+      return config;
     },
     baseUrl: 'https://demowebshop.tricentis.com',
     experimentalRunAllSpecs: true,
