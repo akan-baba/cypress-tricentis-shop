@@ -5,13 +5,10 @@ on:
     branches:
       - main
       - master
-
   pull_request:
-
-  workflow_dispatch: # ✅ Correct way (underscore not space)
-
+  workflow_dispatch:  # Manual trigger
   schedule:
-    - cron: "0 2 * * *" # Nightly at 2 AM UTC  # Nightly at 2 AM UTC
+    - cron: '0 2 * * *'  # Nightly at 2 AM UTC
 
 jobs:
   cypress-tests:
@@ -30,12 +27,17 @@ jobs:
         run: npm ci
 
       - name: Run Cypress Tests with Allure
-        run: npx cypress run --env ENV=qa
-        continue-on-error: true # Allows report generation even if tests fail
+        run: npm run test:allure
+        continue-on-error: true
+
+      - name: Generate Allure Report
+        run: npm run allure:generate
+        if: always()
 
       - name: Upload Allure Report
-        if: always() # Runs even if previous step fails
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: allure-report
           path: allure-report
+
