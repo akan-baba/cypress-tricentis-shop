@@ -8,7 +8,9 @@
   "cypress:run": "npx cypress run --env ENV=qa",
   "allure:generate": "allure generate allure-results --clean -o allure-report",
   "allure:open": "allure open allure-report",
-  "allure:report": "npm run cypress:run && npm run allure:generate"
+  "allure:report": "npm run cypress:run && npm run allure:generate",
+  "test:allure": "npm run allure:report"
+
 
     
 

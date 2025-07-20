@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Run Cypress Tests with Allure
-        run: npm run test:allure
+        run: npm run allure:report
         continue-on-error: true
 
       - name: Generate Allure Report
