@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Run Cypress Tests with Allure
-        run: npm run allure:report
+        run: npx cypress run --env ENV=qa
         continue-on-error: true # Allows report generation even if tests fail
 
       - name: Upload Allure Report
