@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Demowebshop tricentis",
   "main": "index.js",
+  "type": "module",
   "scripts": {
  "cypress:open": "npx cypress open --env ENV=qa",
   "cypress:run": "npx cypress run --env ENV=qa",
